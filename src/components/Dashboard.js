@@ -8,9 +8,9 @@ import {
     TableRow
 } from '@mui/material'
 import DeleteIcon from '@mui/icons-material/Delete'
-import Chart from './Chart'
-import Total from './Total'
-import AddCar from './AddCar'
+import Chart from '../containers/Chart'
+import Total from '../containers/Total'
+import AddCar from '../containers/AddCar'
  
 const Dashboard = (props) => {
     return (
@@ -42,7 +42,7 @@ const Dashboard = (props) => {
                         <TableCell>{car["mpg"]}</TableCell>
                         <TableCell>{car["cylinders"]}</TableCell>
                         <TableCell>{car["horsepower"]}</TableCell>
-                        <TableCell>
+                        <TableCell onClick={() => props.removeCar(idx)}>
                             <DeleteIcon
                                 // add onClick method here
                                 className="icon text-red" />
